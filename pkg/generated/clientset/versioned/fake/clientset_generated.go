@@ -19,10 +19,9 @@ limitations under the License.
 package fake
 
 import (
-	clientset "pkg/generated/clientset/versioned"
-	topocontrollerv1alpha1 "pkg/generated/clientset/versioned/typed/topology/v1alpha1"
-	faketopocontrollerv1alpha1 "pkg/generated/clientset/versioned/typed/topology/v1alpha1/fake"
-
+	clientset "github.com/AlexeyPerevalov/topologyapi/pkg/generated/clientset/versioned"
+	topocontrollerv1alpha1 "github.com/AlexeyPerevalov/topologyapi/pkg/generated/clientset/versioned/typed/topology/v1alpha1"
+	faketopocontrollerv1alpha1 "github.com/AlexeyPerevalov/topologyapi/pkg/generated/clientset/versioned/typed/topology/v1alpha1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

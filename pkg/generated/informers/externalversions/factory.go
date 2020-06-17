@@ -19,13 +19,13 @@ limitations under the License.
 package externalversions
 
 import (
-	versioned "pkg/generated/clientset/versioned"
-	internalinterfaces "pkg/generated/informers/externalversions/internalinterfaces"
-	topology "pkg/generated/informers/externalversions/topology"
 	reflect "reflect"
 	sync "sync"
 	time "time"
 
+	versioned "github.com/AlexeyPerevalov/topologyapi/pkg/generated/clientset/versioned"
+	internalinterfaces "github.com/AlexeyPerevalov/topologyapi/pkg/generated/informers/externalversions/internalinterfaces"
+	topology "github.com/AlexeyPerevalov/topologyapi/pkg/generated/informers/externalversions/topology"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

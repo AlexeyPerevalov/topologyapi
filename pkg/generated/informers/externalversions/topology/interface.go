@@ -19,8 +19,8 @@ limitations under the License.
 package topology
 
 import (
-	internalinterfaces "pkg/generated/informers/externalversions/internalinterfaces"
-	v1alpha1 "pkg/generated/informers/externalversions/topology/v1alpha1"
+	internalinterfaces "github.com/AlexeyPerevalov/topologyapi/pkg/generated/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/AlexeyPerevalov/topologyapi/pkg/generated/informers/externalversions/topology/v1alpha1"
 )
 
 // Interface provides access to each of this group's versions.
