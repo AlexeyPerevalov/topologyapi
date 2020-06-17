@@ -21,11 +21,11 @@ package v1alpha1
 import (
 	"context"
 	topologyv1alpha1 "pkg/apis/topology/v1alpha1"
+	versioned "pkg/generated/clientset/versioned"
+	internalinterfaces "pkg/generated/informers/externalversions/internalinterfaces"
+	v1alpha1 "pkg/generated/listers/topology/v1alpha1"
 	time "time"
 
-	versioned "github.com/AlexeyPerevalov/topologyapi/pkg/generated/clientset/versioned"
-	internalinterfaces "github.com/AlexeyPerevalov/topologyapi/pkg/generated/informers/externalversions/internalinterfaces"
-	v1alpha1 "github.com/AlexeyPerevalov/topologyapi/pkg/generated/listers/topology/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"

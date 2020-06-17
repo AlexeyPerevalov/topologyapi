@@ -20,8 +20,8 @@ package versioned
 
 import (
 	"fmt"
+	topocontrollerv1alpha1 "pkg/generated/clientset/versioned/typed/topology/v1alpha1"
 
-	topocontrollerv1alpha1 "github.com/AlexeyPerevalov/topologyapi/pkg/generated/clientset/versioned/typed/topology/v1alpha1"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

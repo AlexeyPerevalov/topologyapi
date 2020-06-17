@@ -20,8 +20,8 @@ package v1alpha1
 
 import (
 	v1alpha1 "pkg/apis/topology/v1alpha1"
+	"pkg/generated/clientset/versioned/scheme"
 
-	"github.com/AlexeyPerevalov/topologyapi/pkg/generated/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 
