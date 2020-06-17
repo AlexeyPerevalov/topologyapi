@@ -11,6 +11,4 @@ require (
 	k8s.io/code-generator v0.0.0-20200519081644-3bc239a9bae4
 	k8s.io/klog v1.0.0 // indirect
 	k8s.io/utils v0.0.0-20200603063816-c1c6865ac451 // indirect
-	k8s.io/apimachinery/pkg/runtime/serializer
-	k8s.io/client-go/discovery
 )
