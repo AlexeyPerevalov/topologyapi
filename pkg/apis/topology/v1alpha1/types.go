@@ -29,6 +29,7 @@ type NodeResourceTopology struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
+	TopologyPolicy string        `json:"topologyPolicy"`
 	Nodes   []NUMANodeResource   `json:"nodes"`
 }
 

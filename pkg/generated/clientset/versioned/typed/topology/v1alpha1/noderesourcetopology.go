@@ -20,9 +20,9 @@ package v1alpha1
 
 import (
 	"context"
-	v1alpha1 "pkg/apis/topology/v1alpha1"
 	"time"
 
+	v1alpha1 "github.com/AlexeyPerevalov/topologyapi/pkg/apis/topology/v1alpha1"
 	scheme "github.com/AlexeyPerevalov/topologyapi/pkg/generated/clientset/versioned/scheme"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"

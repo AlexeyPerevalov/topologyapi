@@ -20,9 +20,9 @@ package v1alpha1
 
 import (
 	"context"
-	topologyv1alpha1 "pkg/apis/topology/v1alpha1"
 	time "time"
 
+	topologyv1alpha1 "github.com/AlexeyPerevalov/topologyapi/pkg/apis/topology/v1alpha1"
 	versioned "github.com/AlexeyPerevalov/topologyapi/pkg/generated/clientset/versioned"
 	internalinterfaces "github.com/AlexeyPerevalov/topologyapi/pkg/generated/informers/externalversions/internalinterfaces"
 	v1alpha1 "github.com/AlexeyPerevalov/topologyapi/pkg/generated/listers/topology/v1alpha1"
