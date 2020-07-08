@@ -1,0 +1,15 @@
+---
+apiVersion: k8s.cncf.io/v1alpha1
+kind: NodeResourceTopology
+metadata:
+  name: mrc-astlab-arm238
+topologyPolicy: "single-numa-node"
+nodes:
+  - numaID: 0
+    resources:
+      cpu: "20"
+      huawei.com/hi1822: "8"
+  - numaID: 1
+    resources:
+      cpu: "2"
+      huawei.com/hi1822: "2"
