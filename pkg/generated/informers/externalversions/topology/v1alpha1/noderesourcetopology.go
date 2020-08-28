@@ -62,13 +62,13 @@ func NewFilteredNodeResourceTopologyInformer(client versioned.Interface, namespa
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.TopocontrollerV1alpha1().NodeResourceTopologies(namespace).List(context.TODO(), options)
+				return client.TopologyV1alpha1().NodeResourceTopologies(namespace).List(context.TODO(), options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.TopocontrollerV1alpha1().NodeResourceTopologies(namespace).Watch(context.TODO(), options)
+				return client.TopologyV1alpha1().NodeResourceTopologies(namespace).Watch(context.TODO(), options)
 			},
 		},
 		&topologyv1alpha1.NodeResourceTopology{},

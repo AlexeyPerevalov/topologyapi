@@ -20,8 +20,8 @@ package fake
 
 import (
 	clientset "github.com/AlexeyPerevalov/topologyapi/pkg/generated/clientset/versioned"
-	topocontrollerv1alpha1 "github.com/AlexeyPerevalov/topologyapi/pkg/generated/clientset/versioned/typed/topology/v1alpha1"
-	faketopocontrollerv1alpha1 "github.com/AlexeyPerevalov/topologyapi/pkg/generated/clientset/versioned/typed/topology/v1alpha1/fake"
+	topologyv1alpha1 "github.com/AlexeyPerevalov/topologyapi/pkg/generated/clientset/versioned/typed/topology/v1alpha1"
+	faketopologyv1alpha1 "github.com/AlexeyPerevalov/topologyapi/pkg/generated/clientset/versioned/typed/topology/v1alpha1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"
@@ -76,7 +76,7 @@ func (c *Clientset) Tracker() testing.ObjectTracker {
 
 var _ clientset.Interface = &Clientset{}
 
-// TopocontrollerV1alpha1 retrieves the TopocontrollerV1alpha1Client
-func (c *Clientset) TopocontrollerV1alpha1() topocontrollerv1alpha1.TopocontrollerV1alpha1Interface {
-	return &faketopocontrollerv1alpha1.FakeTopocontrollerV1alpha1{Fake: &c.Fake}
+// TopologyV1alpha1 retrieves the TopologyV1alpha1Client
+func (c *Clientset) TopologyV1alpha1() topologyv1alpha1.TopologyV1alpha1Interface {
+	return &faketopologyv1alpha1.FakeTopologyV1alpha1{Fake: &c.Fake}
 }

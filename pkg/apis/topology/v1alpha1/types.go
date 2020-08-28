@@ -17,8 +17,8 @@ limitations under the License.
 package v1alpha1
 
 import (
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/api/core/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 // +genclient
@@ -29,24 +29,39 @@ type NodeResourceTopology struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	TopologyPolicy string        `json:"topologyPolicy"`
-	Nodes   []NUMANodeResource   `json:"nodes"`
+	TopologyPolicy string             `json:"topologyPolicy"`
+	Nodes          []NUMANodeResource `json:"nodes"`
 }
 
 // NUMANodeResource is the spec for a NodeResourceTopology resource
 type NUMANodeResource struct {
-	NUMAID int
+	NUMAID    int
 	Resources v1.ResourceList
+	Cores     []Core `json:"cores"`
 }
 
+type Core struct {
+	ID       int     `json:"core_id"`
+	Threads  []int   `json:"thread_ids"`
+	Caches   []Cache `json:"caches"`
+	SocketID int     `json:"socket_id"`
+}
+
+type Cache struct {
+	// Size of memory cache in bytes.
+	Size uint64 `json:"size"`
+	// Type of memory cache: data, instruction, or unified.
+	Type string `json:"type"`
+	// Level (distance from cpus) in a multi-level cache hierarchy.
+	Level int `json:"level"`
+}
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 // NodeResourceTopologyList is a list of NodeResourceTopology resources
 type NodeResourceTopologyList struct {
-        metav1.TypeMeta `json:",inline"`
-        metav1.ListMeta `json:"metadata"`
+	metav1.TypeMeta `json:",inline"`
+	metav1.ListMeta `json:"metadata"`
 
-        Items []NodeResourceTopology `json:"items"`
+	Items []NodeResourceTopology `json:"items"`
 }
-
