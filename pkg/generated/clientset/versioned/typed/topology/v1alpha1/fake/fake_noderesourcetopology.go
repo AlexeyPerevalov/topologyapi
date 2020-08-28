@@ -32,13 +32,13 @@ import (
 
 // FakeNodeResourceTopologies implements NodeResourceTopologyInterface
 type FakeNodeResourceTopologies struct {
-	Fake *FakeTopocontrollerV1alpha1
+	Fake *FakeTopologyV1alpha1
 	ns   string
 }
 
-var noderesourcetopologiesResource = schema.GroupVersionResource{Group: "topocontroller.k8s.io", Version: "v1alpha1", Resource: "noderesourcetopologies"}
+var noderesourcetopologiesResource = schema.GroupVersionResource{Group: "topology.node.k8s.io", Version: "v1alpha1", Resource: "noderesourcetopologies"}
 
-var noderesourcetopologiesKind = schema.GroupVersionKind{Group: "topocontroller.k8s.io", Version: "v1alpha1", Kind: "NodeResourceTopology"}
+var noderesourcetopologiesKind = schema.GroupVersionKind{Group: "topology.node.k8s.io", Version: "v1alpha1", Kind: "NodeResourceTopology"}
 
 // Get takes name of the nodeResourceTopology, and returns the corresponding nodeResourceTopology object, and an error if there is any.
 func (c *FakeNodeResourceTopologies) Get(ctx context.Context, name string, options v1.GetOptions) (result *v1alpha1.NodeResourceTopology, err error) {

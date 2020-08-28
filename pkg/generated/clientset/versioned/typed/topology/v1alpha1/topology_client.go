@@ -24,22 +24,22 @@ import (
 	rest "k8s.io/client-go/rest"
 )
 
-type TopocontrollerV1alpha1Interface interface {
+type TopologyV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	NodeResourceTopologiesGetter
 }
 
-// TopocontrollerV1alpha1Client is used to interact with features provided by the topocontroller.k8s.io group.
-type TopocontrollerV1alpha1Client struct {
+// TopologyV1alpha1Client is used to interact with features provided by the topology.node.k8s.io group.
+type TopologyV1alpha1Client struct {
 	restClient rest.Interface
 }
 
-func (c *TopocontrollerV1alpha1Client) NodeResourceTopologies(namespace string) NodeResourceTopologyInterface {
+func (c *TopologyV1alpha1Client) NodeResourceTopologies(namespace string) NodeResourceTopologyInterface {
 	return newNodeResourceTopologies(c, namespace)
 }
 
-// NewForConfig creates a new TopocontrollerV1alpha1Client for the given config.
-func NewForConfig(c *rest.Config) (*TopocontrollerV1alpha1Client, error) {
+// NewForConfig creates a new TopologyV1alpha1Client for the given config.
+func NewForConfig(c *rest.Config) (*TopologyV1alpha1Client, error) {
 	config := *c
 	if err := setConfigDefaults(&config); err != nil {
 		return nil, err
@@ -48,12 +48,12 @@ func NewForConfig(c *rest.Config) (*TopocontrollerV1alpha1Client, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &TopocontrollerV1alpha1Client{client}, nil
+	return &TopologyV1alpha1Client{client}, nil
 }
 
-// NewForConfigOrDie creates a new TopocontrollerV1alpha1Client for the given config and
+// NewForConfigOrDie creates a new TopologyV1alpha1Client for the given config and
 // panics if there is an error in the config.
-func NewForConfigOrDie(c *rest.Config) *TopocontrollerV1alpha1Client {
+func NewForConfigOrDie(c *rest.Config) *TopologyV1alpha1Client {
 	client, err := NewForConfig(c)
 	if err != nil {
 		panic(err)
@@ -61,9 +61,9 @@ func NewForConfigOrDie(c *rest.Config) *TopocontrollerV1alpha1Client {
 	return client
 }
 
-// New creates a new TopocontrollerV1alpha1Client for the given RESTClient.
-func New(c rest.Interface) *TopocontrollerV1alpha1Client {
-	return &TopocontrollerV1alpha1Client{c}
+// New creates a new TopologyV1alpha1Client for the given RESTClient.
+func New(c rest.Interface) *TopologyV1alpha1Client {
+	return &TopologyV1alpha1Client{c}
 }
 
 func setConfigDefaults(config *rest.Config) error {
@@ -81,7 +81,7 @@ func setConfigDefaults(config *rest.Config) error {
 
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
-func (c *TopocontrollerV1alpha1Client) RESTClient() rest.Interface {
+func (c *TopologyV1alpha1Client) RESTClient() rest.Interface {
 	if c == nil {
 		return nil
 	}

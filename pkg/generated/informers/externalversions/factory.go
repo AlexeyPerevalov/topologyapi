@@ -172,9 +172,9 @@ type SharedInformerFactory interface {
 	ForResource(resource schema.GroupVersionResource) (GenericInformer, error)
 	WaitForCacheSync(stopCh <-chan struct{}) map[reflect.Type]bool
 
-	Topocontroller() topology.Interface
+	Topology() topology.Interface
 }
 
-func (f *sharedInformerFactory) Topocontroller() topology.Interface {
+func (f *sharedInformerFactory) Topology() topology.Interface {
 	return topology.New(f, f.namespace, f.tweakListOptions)
 }
