@@ -1,0 +1,21 @@
+---
+apiVersion: topology.node.k8s.io/v1alpha1
+kind: NodeResourceTopology
+metadata:
+  name: node1
+topologyPolicy: "single-numa-node"
+nodes:
+  - numaID: 1
+    resources:
+      cpu: "20"
+      vendor/nic1: "30"
+    distances:
+      "1": 0
+      "2": 10
+  - numaID: 2
+    resources:
+      cpu: "20"
+      vendor/nic1: "30"
+    distances:
+      1: 10
+      "2": 0

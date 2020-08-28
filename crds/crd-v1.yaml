@@ -2,11 +2,11 @@
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  name: node-topology-resources.k8s.cncf.io
+  name: noderesourcetopologies.node.k8s-test.io
 spec:
-  group: k8s.cncf.io
+  group: node.k8s-test.io
   versions:
-    - name: v1
+    - name: v1alpha1
       served: true
       storage: true
       schema:
@@ -26,8 +26,8 @@ spec:
                       type: string
   scope: Namespaced
   names:
-    plural: node-topology-resources
-    singular: node-topology-resource
+    plural: noderesourcetopologies
+    singular: noderesourcetopology
     kind: NodeResourceTopology
     shortNames:
-      - node-topology-res
+      - node-res-topo
