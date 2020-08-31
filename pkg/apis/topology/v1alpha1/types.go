@@ -54,6 +54,8 @@ type Cache struct {
 	Type string `json:"type"`
 	// Level (distance from cpus) in a multi-level cache hierarchy.
 	Level int `json:"level"`
+	//Content of the sysfs/.../cpu/cpuN/cache/indexN/shared_cpu_list
+	SharedCPUs []int `json:"level"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
