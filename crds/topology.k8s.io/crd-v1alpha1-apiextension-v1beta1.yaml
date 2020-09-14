@@ -17,23 +17,36 @@ spec:
     openAPIV3Schema:
       type: object
       properties:
-        topologyPolicy:
-          type: string
-        nodes:
+        topologyPolicies:
           type: array
           items:
+            type: string
+        zones:
+          type: object
+          additionalProperties:
             type: object
             properties:
-              numaID:
-                type: integer
+              type:
+                type: string
+              parent:
+                type: string
               resources:
                 type: object
                 additionalProperties:
-                  type: string
-              distances:
+                  type: object
+                  properties:
+                    capacity:
+                      type: string
+                    allocatable:
+                      type: string
+              costs:
                 type: object
                 additionalProperties:
                   type: integer
+              attributes:
+                type: object
+                additionalProperties:
+                  type: string
   names:
     plural: noderesourcetopologies
     singular: noderesourcetopology
