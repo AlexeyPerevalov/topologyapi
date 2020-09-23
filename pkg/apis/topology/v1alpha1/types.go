@@ -18,6 +18,7 @@ package v1alpha1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	intstr "k8s.io/apimachinery/pkg/util/intstr"
 )
 
 // +genclient
@@ -42,8 +43,8 @@ type Zone struct {
 }
 
 type ResourceInfo struct {
-	Allocatable string `json:"allocatable"`
-	Capacity    string `json:"capacity"`
+	Allocatable intstr.IntOrString `json:"allocatable"`
+	Capacity    intstr.IntOrString `json:"capacity"`
 }
 
 type ZoneMap map[string]Zone
