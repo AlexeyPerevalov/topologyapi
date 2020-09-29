@@ -36,9 +36,9 @@ spec:
                   type: object
                   properties:
                     capacity:
-                      type: string
+                      x-kubernetes-int-or-string: true
                     allocatable:
-                      type: string
+                      x-kubernetes-int-or-string: true
               costs:
                 type: object
                 additionalProperties:
